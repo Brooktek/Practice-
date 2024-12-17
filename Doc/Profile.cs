@@ -14,7 +14,7 @@ namespace Doc
     public partial class Profile : Form
     {
         private int DId;
-        public Profile()
+        public Profile(int dId)
         {
             InitializeComponent();
             this.DId = DId;
@@ -26,7 +26,7 @@ namespace Doc
             try
             {
                 // Query to fetch doctor details
-                string query = "SELECT Name, Specialization, Email, Phone FROM doctor WHERE DId = @DoctorID";
+                string query = "SELECT Name, Specialization, Email, Phone FROM doctor WHERE DId = @DId";
 
                 // Database connection
                 using (MySqlConnection connection = new MySqlConnection("server=localhost;Uid=root;database=hospitalms;port=3306;Pwd=;"))

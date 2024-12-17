@@ -61,8 +61,12 @@ namespace Doc
 
         private void profileToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Profile profile = new Profile();
+            Profile profile = new Profile(DId);
             profile.Show();
+
+            int DId = 1; // Replace with the actual Doctor ID
+            profile.ShowDialog();
+
         }
 
         private void button5_Click(object sender, EventArgs e)
