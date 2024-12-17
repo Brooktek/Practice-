@@ -34,6 +34,7 @@ namespace Doc
             {
                 string query = "SELECT * FROM patient";
 
+
                 command = new MySqlCommand(query, con.cn);
                 da = new MySqlDataAdapter(command);
 

@@ -41,7 +41,7 @@ namespace Doc
             // 
             label2.Location = new Point(52, 259);
             label2.Name = "label2";
-            label2.Size = new Size(145, 44);
+            label2.Size = new Size(254, 44);
             label2.TabIndex = 1;
             label2.Text = "Disease";
             // 
@@ -49,7 +49,7 @@ namespace Doc
             // 
             label3.Location = new Point(52, 193);
             label3.Name = "label3";
-            label3.Size = new Size(145, 44);
+            label3.Size = new Size(254, 44);
             label3.TabIndex = 2;
             label3.Text = "Blood Group";
             // 
@@ -76,7 +76,7 @@ namespace Doc
             // 
             label1.Location = new Point(52, 57);
             label1.Name = "label1";
-            label1.Size = new Size(145, 44);
+            label1.Size = new Size(254, 44);
             label1.TabIndex = 5;
             label1.Text = "Name";
             // 
@@ -84,7 +84,7 @@ namespace Doc
             // 
             label4.Location = new Point(52, 126);
             label4.Name = "label4";
-            label4.Size = new Size(145, 44);
+            label4.Size = new Size(254, 44);
             label4.TabIndex = 6;
             label4.Text = "Age";
             // 
@@ -106,7 +106,7 @@ namespace Doc
         }
 
 
-#endregion
+        #endregion
         private Label label2;
         private Label label3;
         private Button button1;

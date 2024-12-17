@@ -28,7 +28,7 @@ namespace Doc
         {
             try
             {
-                string query = "SELECT Name, Age, Disease, Status FROM patient WHERE PatientID = @PatientID";
+                string query = "SELECT Name, Age, BloodGroup, Disease FROM patient WHERE PatientID = @PatientID";
                 using (MySqlConnection connection = new MySqlConnection("server=localhost;Uid=root;database=hospitalms;port=3306;Pwd=;"))
                 {
                     connection.Open();
@@ -42,7 +42,7 @@ namespace Doc
                             {
                                 label1.Text = "Name: " + reader["Name"].ToString();
                                 label4.Text = "Age: " + reader["Age"].ToString();
-                                label3.Text = "Blood Group: " + reader["Blood Group"].ToString();
+                                label3.Text = "BloodGroup: " + reader["BloodGroup"].ToString();
                                 label2.Text = "Disease: " + reader["Disease"].ToString();
                             }
                             else
