@@ -35,6 +35,7 @@ namespace Doc
             button2 = new Button();
             label1 = new Label();
             label4 = new Label();
+            button3 = new Button();
             SuspendLayout();
             // 
             // label2
@@ -55,7 +56,7 @@ namespace Doc
             // 
             // button1
             // 
-            button1.Location = new Point(182, 337);
+            button1.Location = new Point(52, 337);
             button1.Name = "button1";
             button1.Size = new Size(177, 43);
             button1.TabIndex = 3;
@@ -65,7 +66,7 @@ namespace Doc
             // 
             // button2
             // 
-            button2.Location = new Point(430, 337);
+            button2.Location = new Point(308, 337);
             button2.Name = "button2";
             button2.Size = new Size(177, 43);
             button2.TabIndex = 4;
@@ -88,11 +89,20 @@ namespace Doc
             label4.TabIndex = 6;
             label4.Text = "Age";
             // 
+            // button3
+            // 
+            button3.Location = new Point(563, 337);
+            button3.Name = "button3";
+            button3.Size = new Size(177, 43);
+            button3.TabIndex = 7;
+            button3.UseVisualStyleBackColor = true;
+            // 
             // DetailedPatientForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(button3);
             Controls.Add(label4);
             Controls.Add(label1);
             Controls.Add(button2);
@@ -113,5 +123,6 @@ namespace Doc
         private Button button2;
         private Label label1;
         private Label label4;
+        private Button button3;
     }
 }

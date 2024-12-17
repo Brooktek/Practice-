@@ -32,7 +32,7 @@ namespace Doc
         {
             try
             {
-                string query = "SELECT * FROM patient";
+                string query = "SELECT PatientID, Name, Age, BloodGroup, Disease FROM patient";
 
 
                 command = new MySqlCommand(query, con.cn);

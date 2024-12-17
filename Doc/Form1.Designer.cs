@@ -34,9 +34,6 @@
             profileToolStripMenuItem = new ToolStripMenuItem();
             appointmentsToolStripMenuItem = new ToolStripMenuItem();
             reportToolStripMenuItem = new ToolStripMenuItem();
-            button1 = new Button();
-            button2 = new Button();
-            button3 = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             menuStrip1.SuspendLayout();
             SuspendLayout();
@@ -45,6 +42,8 @@
             // 
             dataGridView1.AllowUserToAddRows = false;
             dataGridView1.AllowUserToDeleteRows = false;
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Location = new Point(12, 259);
             dataGridView1.Name = "dataGridView1";
@@ -93,41 +92,11 @@
             reportToolStripMenuItem.Size = new Size(68, 24);
             reportToolStripMenuItem.Text = "Report";
             // 
-            // button1
-            // 
-            button1.Location = new Point(427, 75);
-            button1.Name = "button1";
-            button1.Size = new Size(163, 43);
-            button1.TabIndex = 5;
-            button1.Text = "Prescribe Medication";
-            button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            button2.Location = new Point(645, 75);
-            button2.Name = "button2";
-            button2.Size = new Size(134, 43);
-            button2.TabIndex = 6;
-            button2.Text = "Request Lab Test";
-            button2.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            button3.Location = new Point(549, 145);
-            button3.Name = "button3";
-            button3.Size = new Size(134, 43);
-            button3.TabIndex = 7;
-            button3.Text = "View Lab Result";
-            button3.UseVisualStyleBackColor = true;
-            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(button3);
-            Controls.Add(button2);
-            Controls.Add(button1);
             Controls.Add(btnload);
             Controls.Add(dataGridView1);
             Controls.Add(menuStrip1);
@@ -148,9 +117,6 @@
         private Button btnload;
         private MenuStrip menuStrip1;
         private ToolStripMenuItem profileToolStripMenuItem;
-        private Button button1;
-        private Button button2;
-        private Button button3;
         private ToolStripMenuItem appointmentsToolStripMenuItem;
         private ToolStripMenuItem reportToolStripMenuItem;
     }
