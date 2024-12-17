@@ -38,6 +38,7 @@
             textBox2 = new TextBox();
             textBox3 = new TextBox();
             textBox4 = new TextBox();
+            button2 = new Button();
             button1 = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -120,14 +121,24 @@
             textBox4.Size = new Size(174, 27);
             textBox4.TabIndex = 13;
             // 
+            // button2
+            // 
+            button2.Location = new Point(491, 305);
+            button2.Name = "button2";
+            button2.Size = new Size(94, 29);
+            button2.TabIndex = 15;
+            button2.Text = "Edit Profile";
+            button2.UseVisualStyleBackColor = true;
+            // 
             // button1
             // 
-            button1.Location = new Point(351, 305);
+            button1.Location = new Point(327, 305);
             button1.Name = "button1";
             button1.Size = new Size(94, 29);
-            button1.TabIndex = 14;
-            button1.Text = "Edit Profile";
+            button1.TabIndex = 16;
+            button1.Text = "Load Info";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click_1;
             // 
             // Profile
             // 
@@ -135,6 +146,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
             Controls.Add(button1);
+            Controls.Add(button2);
             Controls.Add(textBox4);
             Controls.Add(textBox3);
             Controls.Add(textBox2);
@@ -147,7 +159,6 @@
             Controls.Add(pictureBox1);
             Name = "Profile";
             Text = "Profile";
-            Load += Profile_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -165,6 +176,7 @@
         private TextBox textBox2;
         private TextBox textBox3;
         private TextBox textBox4;
+        private Button button2;
         private Button button1;
     }
 }

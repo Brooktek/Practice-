@@ -32,14 +32,25 @@ namespace Doc
         {
             try
             {
-                con.cn.Open();
-                command = new MySqlCommand("Select * from patient", con.cn);
-                command.ExecuteNonQuery();
-                dt = new DataTable();
+                string query = "SELECT * FROM patient";
+
+                command = new MySqlCommand(query, con.cn);
                 da = new MySqlDataAdapter(command);
+
+                dt = new DataTable();
                 da.Fill(dt);
-                dataGridView1.DataSource = dt.DefaultView;
-                con.cn.Close();
+
+                dataGridView1.DataSource = dt;
+                dataGridView1.AutoResizeColumns();
+                
+                //con.cn.Open();
+                //command = new MySqlCommand("Select * from patient", con.cn);
+                //command.ExecuteNonQuery();
+                //dt = new DataTable();
+                //da = new MySqlDataAdapter(command);
+                //da.Fill(dt);
+                //dataGridView1.DataSource = dt.DefaultView;
+                //con.cn.Close();
             }
             catch (Exception ex)
             {
@@ -56,6 +67,19 @@ namespace Doc
         private void button5_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                int patientId = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["PatientID"].Value);
+                string patientName = dataGridView1.Rows[e.RowIndex].Cells["Name"].Value.ToString();
+
+
+                DetailedPatientForm detailedForm = new DetailedPatientForm(patientId);
+                detailedForm.ShowDialog();
+            }
         }
     }
 }

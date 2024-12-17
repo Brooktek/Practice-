@@ -32,12 +32,11 @@
             btnload = new Button();
             menuStrip1 = new MenuStrip();
             profileToolStripMenuItem = new ToolStripMenuItem();
+            appointmentsToolStripMenuItem = new ToolStripMenuItem();
+            reportToolStripMenuItem = new ToolStripMenuItem();
             button1 = new Button();
             button2 = new Button();
             button3 = new Button();
-            appointmentsToolStripMenuItem = new ToolStripMenuItem();
-            reportToolStripMenuItem = new ToolStripMenuItem();
-            button4 = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             menuStrip1.SuspendLayout();
             SuspendLayout();
@@ -51,8 +50,9 @@
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(300, 188);
+            dataGridView1.Size = new Size(776, 188);
             dataGridView1.TabIndex = 0;
+            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
             // btnload
             // 
@@ -81,6 +81,18 @@
             profileToolStripMenuItem.Text = "Profile";
             profileToolStripMenuItem.Click += profileToolStripMenuItem_Click;
             // 
+            // appointmentsToolStripMenuItem
+            // 
+            appointmentsToolStripMenuItem.Name = "appointmentsToolStripMenuItem";
+            appointmentsToolStripMenuItem.Size = new Size(117, 24);
+            appointmentsToolStripMenuItem.Text = "Appointments";
+            // 
+            // reportToolStripMenuItem
+            // 
+            reportToolStripMenuItem.Name = "reportToolStripMenuItem";
+            reportToolStripMenuItem.Size = new Size(68, 24);
+            reportToolStripMenuItem.Text = "Report";
+            // 
             // button1
             // 
             button1.Location = new Point(427, 75);
@@ -108,33 +120,11 @@
             button3.Text = "View Lab Result";
             button3.UseVisualStyleBackColor = true;
             // 
-            // appointmentsToolStripMenuItem
-            // 
-            appointmentsToolStripMenuItem.Name = "appointmentsToolStripMenuItem";
-            appointmentsToolStripMenuItem.Size = new Size(117, 24);
-            appointmentsToolStripMenuItem.Text = "Appointments";
-            // 
-            // reportToolStripMenuItem
-            // 
-            reportToolStripMenuItem.Name = "reportToolStripMenuItem";
-            reportToolStripMenuItem.Size = new Size(68, 24);
-            reportToolStripMenuItem.Text = "Report";
-            // 
-            // button4
-            // 
-            button4.Location = new Point(333, 260);
-            button4.Name = "button4";
-            button4.Size = new Size(134, 43);
-            button4.TabIndex = 8;
-            button4.Text = "Update Info";
-            button4.UseVisualStyleBackColor = true;
-            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(button4);
             Controls.Add(button3);
             Controls.Add(button2);
             Controls.Add(button1);
@@ -163,6 +153,5 @@
         private Button button3;
         private ToolStripMenuItem appointmentsToolStripMenuItem;
         private ToolStripMenuItem reportToolStripMenuItem;
-        private Button button4;
     }
 }
