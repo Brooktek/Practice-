@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,11 @@ namespace Doc
 {
     public partial class PrescriptionsForm : Form
     {
-        public PrescriptionsForm()
+        private int patientId;
+        public PrescriptionsForm(int patientId)
         {
             InitializeComponent();
+            this.patientId = patientId;
         }
 
         private void PrescriptionsForm_Load(object sender, EventArgs e)
@@ -39,7 +42,32 @@ namespace Doc
 
         private void label1_Click(object sender, EventArgs e)
         {
+            try
+            {
+                string query = "INSERT INTO prescriptions (PatientID, MedicationName, Dosage, Instructions, Duration) " +
+                               "VALUES (@PatientID, @MedicationName, @Dosage, @Instructions, @Duration, @DatePrescribed)";
 
+                using (MySqlConnection connection = new MySqlConnection("server=localhost;Uid=root;database=hospitalms;port=3306;Pwd=;"))
+                {
+                    connection.Open();
+                    using (MySqlCommand command = new MySqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@PatientID", patientId);
+                        command.Parameters.AddWithValue("@MedicationName", textBoxMedication.Text);
+                        command.Parameters.AddWithValue("@Dosage", textBoxDosage.Text);
+                        command.Parameters.AddWithValue("@Instructions", textBoxInstructions.Text);
+                        command.Parameters.AddWithValue("@Duration", comboBoxDuration.Text);
+
+                        command.ExecuteNonQuery();
+                        MessageBox.Show("Prescription saved successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.Close(); 
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}", "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
