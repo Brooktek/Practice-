@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -66,7 +67,32 @@ namespace Doc
 
         private void button1_Click(object sender, EventArgs e)
         {
+            try
+            {
+                string query = "INSERT INTO prescriptions (PatientID, DoctorID, MedicationName, Dosage, Instructions, Duration, DatePrescribed) VALUES (@PatientID, @DoctorID, @MedicationName, @Dosage, @Instructions, @Duration, @DatePrescribed)";
 
+                using (MySqlConnection connection = new MySqlConnection("server=localhost;Uid=root;database=hospitalms;port=3306;Pwd=;"))
+                {
+                    connection.Open();
+                    using (MySqlCommand command = new MySqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@PatientID", patientId);
+                        command.Parameters.AddWithValue("@DoctorID", DId);
+                        command.Parameters.AddWithValue("@MedicationName", textBoxMedication.Text);
+                        command.Parameters.AddWithValue("@Dosage", textBoxDosage.Text);
+                        command.Parameters.AddWithValue("@Instructions", textBoxInstructions.Text);
+                        command.Parameters.AddWithValue("@Duration", comboBoxDuration.Text);
+                        command.Parameters.AddWithValue("@DatePrescribed", DateTime.Now);
+
+                        command.ExecuteNonQuery();
+                        MessageBox.Show("Prescription saved successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}", "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
