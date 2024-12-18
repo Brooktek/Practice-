@@ -11,6 +11,8 @@ namespace Doc
 {
     public partial class Form1 : Form
     {
+        private int DId;
+
         myDBConnection con = new myDBConnection();
         MySqlCommand command;
         MySqlDataAdapter da;
@@ -43,15 +45,6 @@ namespace Doc
 
                 dataGridView1.DataSource = dt;
                 dataGridView1.AutoResizeColumns();
-                
-                //con.cn.Open();
-                //command = new MySqlCommand("Select * from patient", con.cn);
-                //command.ExecuteNonQuery();
-                //dt = new DataTable();
-                //da = new MySqlDataAdapter(command);
-                //da.Fill(dt);
-                //dataGridView1.DataSource = dt.DefaultView;
-                //con.cn.Close();
             }
             catch (Exception ex)
             {
@@ -61,12 +54,9 @@ namespace Doc
 
         private void profileToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            DId = 1;
             Profile profile = new Profile(DId);
-            profile.Show();
-
-            int DId = 1; // Replace with the actual Doctor ID
             profile.ShowDialog();
-
         }
 
         private void button5_Click(object sender, EventArgs e)
