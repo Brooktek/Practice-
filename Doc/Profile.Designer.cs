@@ -34,17 +34,13 @@
             label2 = new Label();
             label3 = new Label();
             label4 = new Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
-            textBox4 = new TextBox();
             button2 = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // browseBtn
             // 
-            browseBtn.Location = new Point(22, 119);
+            browseBtn.Location = new Point(27, 156);
             browseBtn.Name = "browseBtn";
             browseBtn.Size = new Size(94, 29);
             browseBtn.TabIndex = 5;
@@ -53,7 +49,7 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.Location = new Point(22, 37);
+            pictureBox1.Location = new Point(27, 74);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(125, 62);
             pictureBox1.TabIndex = 4;
@@ -61,71 +57,43 @@
             // 
             // label1
             // 
-            label1.Location = new Point(223, 69);
+            label1.Location = new Point(242, 74);
             label1.Name = "label1";
-            label1.Size = new Size(153, 35);
+            label1.Size = new Size(293, 50);
             label1.TabIndex = 6;
             label1.Text = "Name";
             label1.Click += label1_Click;
             // 
             // label2
             // 
-            label2.Location = new Point(223, 123);
+            label2.Location = new Point(242, 141);
             label2.Name = "label2";
-            label2.Size = new Size(153, 35);
+            label2.Size = new Size(293, 50);
             label2.TabIndex = 7;
             label2.Text = "Specialization";
             // 
             // label3
             // 
-            label3.Location = new Point(223, 223);
+            label3.Location = new Point(242, 277);
             label3.Name = "label3";
-            label3.Size = new Size(153, 35);
+            label3.Size = new Size(293, 50);
             label3.TabIndex = 8;
             label3.Text = "PhoneNum";
             label3.Click += label3_Click;
             // 
             // label4
             // 
-            label4.Location = new Point(223, 173);
+            label4.Location = new Point(242, 212);
             label4.Name = "label4";
-            label4.Size = new Size(153, 35);
+            label4.Size = new Size(293, 50);
             label4.TabIndex = 9;
             label4.Text = "Email";
             // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(382, 69);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(174, 27);
-            textBox1.TabIndex = 10;
-            // 
-            // textBox2
-            // 
-            textBox2.Location = new Point(382, 173);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(174, 27);
-            textBox2.TabIndex = 11;
-            // 
-            // textBox3
-            // 
-            textBox3.Location = new Point(382, 119);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(174, 27);
-            textBox3.TabIndex = 12;
-            // 
-            // textBox4
-            // 
-            textBox4.Location = new Point(382, 223);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(174, 27);
-            textBox4.TabIndex = 13;
-            // 
             // button2
             // 
-            button2.Location = new Point(415, 304);
+            button2.Location = new Point(432, 355);
             button2.Name = "button2";
-            button2.Size = new Size(94, 29);
+            button2.Size = new Size(177, 29);
             button2.TabIndex = 15;
             button2.Text = "Edit Profile";
             button2.UseVisualStyleBackColor = true;
@@ -136,10 +104,6 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
             Controls.Add(button2);
-            Controls.Add(textBox4);
-            Controls.Add(textBox3);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(label2);
@@ -150,7 +114,6 @@
             Text = "Profile";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -161,10 +124,6 @@
         private Label label2;
         private Label label3;
         private Label label4;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox3;
-        private TextBox textBox4;
         private Button button2;
     }
 }
